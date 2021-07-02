@@ -1,0 +1,36 @@
+.hamburger {
+  display: none;
+  @include media-breakpoint-down(md) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50px;
+    height: 50px;
+    margin: 3px 0;
+    border-radius: 50%;
+    background-color: $accent;
+  }
+  span {
+    display: block;
+    height: 2px;
+    margin: 3px 0;
+    width: 32px;
+    background-color: #fff;
+    transition: 0.5s all;
+  }
+  &_active {
+    span {
+      margin-bottom: -2px;
+      &:nth-child(1) {
+        transform: translateY(0px) rotate(-45deg);
+      }
+      &:nth-child(2) {
+        display: none;
+      } 
+      &:nth-child(3) {
+        transform: translateY(-3px) rotate(45deg);
+      }
+    }
+  }
+}
